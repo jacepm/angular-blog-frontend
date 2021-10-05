@@ -6,7 +6,7 @@ import { Router } from "@angular/router";
 @Component({
   selector: "app-blog-add",
   templateUrl: "./blog-add.component.html",
-  styleUrls: ["./blog-add.component.css"]
+  styleUrls: ["./blog-add.component.scss"],
 })
 export class BlogAddComponent implements OnInit {
   blogForm: FormGroup;
@@ -26,7 +26,7 @@ export class BlogAddComponent implements OnInit {
     this.blogForm = this.fb.group({
       title: ["", Validators.required],
       author: ["", Validators.required],
-      content: ["", Validators.required]
+      content: ["", Validators.required],
     });
   }
 
@@ -44,7 +44,7 @@ export class BlogAddComponent implements OnInit {
         console.log(res.message);
         this.router.navigate([`/blog`]);
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
         this.loading = false;
       });

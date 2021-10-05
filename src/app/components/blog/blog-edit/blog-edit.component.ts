@@ -6,7 +6,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 @Component({
   selector: "app-blog-edit",
   templateUrl: "./blog-edit.component.html",
-  styleUrls: ["./blog-edit.component.css"]
+  styleUrls: ["./blog-edit.component.scss"],
 })
 export class BlogEditComponent implements OnInit {
   blogForm: FormGroup;
@@ -35,10 +35,10 @@ export class BlogEditComponent implements OnInit {
         this.blogForm.patchValue({
           title: this.row.title,
           author: this.row.author,
-          content: this.row.content
+          content: this.row.content,
         });
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   }
@@ -47,7 +47,7 @@ export class BlogEditComponent implements OnInit {
     this.blogForm = this.fb.group({
       title: ["", Validators.required],
       author: ["", Validators.required],
-      content: ["", Validators.required]
+      content: ["", Validators.required],
     });
   }
 
@@ -65,7 +65,7 @@ export class BlogEditComponent implements OnInit {
         console.log(res.message);
         this.router.navigate([`/blog`]);
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
         this.loading = false;
       });

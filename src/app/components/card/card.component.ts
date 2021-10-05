@@ -5,7 +5,7 @@ import { Router } from "@angular/router";
 @Component({
   selector: "app-card",
   templateUrl: "./card.component.html",
-  styleUrls: ["./card.component.css"]
+  styleUrls: ["./card.component.scss"],
 })
 export class CardComponent implements OnInit {
   rows: any;
@@ -24,7 +24,7 @@ export class CardComponent implements OnInit {
           .sort((a, b) => (new Date(a.date) < new Date(b.date) ? 1 : -1))
           .filter((data: any) => data.deleted === false);
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   }

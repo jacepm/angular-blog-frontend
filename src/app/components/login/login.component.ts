@@ -6,7 +6,7 @@ import { Router } from "@angular/router";
 @Component({
   selector: "app-login",
   templateUrl: "./login.component.html",
-  styleUrls: ["./login.component.css"]
+  styleUrls: ["./login.component.scss"],
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   login() {
     this.loginForm = this.fb.group({
       userName: ["", Validators.required],
-      password: ["", Validators.required]
+      password: ["", Validators.required],
     });
   }
 
@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem("token", res.meta.token);
         this.router.navigate(["/blog"]);
       })
-      .catch(error => {
+      .catch((error) => {
         this.loading = false;
         console.log(error);
       });

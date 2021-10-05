@@ -5,7 +5,7 @@ import { ApiService } from "../../../services/api.service";
 @Component({
   selector: "app-blog-view",
   templateUrl: "./blog-view.component.html",
-  styleUrls: ["./blog-view.component.css"]
+  styleUrls: ["./blog-view.component.scss"],
 })
 export class BlogViewComponent implements OnInit {
   id: any;
@@ -24,7 +24,7 @@ export class BlogViewComponent implements OnInit {
       .then((res: any) => {
         this.row = res.data;
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   }
